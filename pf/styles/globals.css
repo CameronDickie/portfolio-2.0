@@ -7,6 +7,10 @@
   font-family: "Rubik Mono One";
   src: url('../public/RubikMonoOne-Regular.ttf');
 }
+@font-face {
+  font-family: "Anek Latin";
+  src: url('../public/AnekLatin-VariableFont_wdth\,wght.ttf');
+}
 html,
 body {
   padding: 0;

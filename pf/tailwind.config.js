@@ -6,10 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        'rubik': ['Rubik Mono One', 'sans-serif']
-      }
+      fontFamily: {
+        rubik: ["Rubik Mono One", "sans-serif"],
+        anek: ["Anek Latin", "sans-serif"],
+      },
     },
   },
   plugins: [],
-}
+};
