@@ -16,7 +16,6 @@ export default function Home() {
         title="Alle Menschen sind frei und gleich an Würde und Rechten"
         subtitle="But in a much more real sense, I have no idea what I'm doing"
       />
-      {/* <Header /> */}
     </div>
   );
 }

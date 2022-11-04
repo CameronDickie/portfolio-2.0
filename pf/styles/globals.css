@@ -11,6 +11,13 @@
   font-family: "Anek Latin";
   src: url('../public/AnekLatin-VariableFont_wdth\,wght.ttf');
 }
+
+/* variable declaration */
+:root {
+  --g1: #fd1d66;
+  --g2: #833ab4;
+  --g3: #45befc;
+}
 html,
 body {
   padding: 0;

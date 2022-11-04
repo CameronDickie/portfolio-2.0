@@ -2,21 +2,26 @@
     code taken and modified from https://www.youtube.com/watch?v=joDhIH6Xumw
 */
 import React from "react";
+import styles from "../styles/card.module.css";
 
 interface Content {
   title: string;
   subtitle: string;
 }
 class HoverCard extends React.Component<Content> {
-  title: Element | undefined;
-  subtitle: Element | undefined;
+  title: Element | null | undefined;
+  subtitle: Element | null | undefined;
   complete: Boolean | undefined;
   componentDidMount() {
     if (!this.complete) {
-      this.title = document.getElementsByClassName("card-title")[0];
-      this.title.innerHTML = this.props.title;
-      this.subtitle = document.getElementsByClassName("card-subtitle")[0];
-      this.createSubtitle(this.props.subtitle);
+      this.title = document.getElementById("card-title");
+      this.title
+        ? (this.title.innerHTML = this.props.title)
+        : console.log("title not found");
+      this.subtitle = document.getElementById("card-subtitle");
+      this.subtitle
+        ? this.createSubtitle(this.props.subtitle)
+        : console.log("subtitle not found");
       this.complete = true;
     }
   }
@@ -25,7 +30,7 @@ class HoverCard extends React.Component<Content> {
 
     word.innerHTML = `${text} `;
 
-    word.classList.add("card-subtitle-word");
+    word.className = styles.cardSubtitleWord;
 
     // let ws = document.querySelector<HTMLElement>('.card-subtitle-word');
     word.style.transitionDelay = `${index * 40}ms`;
@@ -39,10 +44,16 @@ class HoverCard extends React.Component<Content> {
   createSubtitle = (text: String) => text.split(" ").map(this.addWord);
   render() {
     return (
-      <div className="card">
-        <div className="card-content">
-          <p className="card-title font-anek font-extrabold text-3xl"></p>
-          <p className="card-subtitle font-anek text-lg mt-2"></p>
+      <div className={styles.card}>
+        <div className={styles.cardContent}>
+          <p
+            id="card-title"
+            className={`${styles.cardTitle} font-anek font-extrabold text-3xl`}
+          ></p>
+          <p
+            id="card-subtitle"
+            className={`${styles.cardSubtitle} font-anek text-lg mt-2`}
+          ></p>
         </div>
       </div>
     );
