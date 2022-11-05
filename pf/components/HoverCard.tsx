@@ -11,7 +11,7 @@ interface Content {
 class HoverCard extends React.Component<Content> {
   title: Element | null | undefined;
   subtitle: Element | null | undefined;
-  complete: Boolean | undefined;
+  complete!: Boolean;
   componentDidMount() {
     if (!this.complete) {
       this.title = document.getElementById("card-title");
@@ -44,16 +44,18 @@ class HoverCard extends React.Component<Content> {
   createSubtitle = (text: String) => text.split(" ").map(this.addWord);
   render() {
     return (
-      <div className={styles.card}>
-        <div className={styles.cardContent}>
-          <p
-            id="card-title"
-            className={`${styles.cardTitle} font-anek font-extrabold text-3xl`}
-          ></p>
-          <p
-            id="card-subtitle"
-            className={`${styles.cardSubtitle} font-anek text-lg mt-2`}
-          ></p>
+      <div className="absolute mt-16 ml-16">
+        <div className={styles.card}>
+          <div className={styles.cardContent}>
+            <p
+              id="card-title"
+              className={`${styles.cardTitle} font-anek font-extrabold text-3xl`}
+            ></p>
+            <p
+              id="card-subtitle"
+              className={`${styles.cardSubtitle} font-anek text-lg mt-2`}
+            ></p>
+          </div>
         </div>
       </div>
     );
