@@ -44,12 +44,12 @@ class HoverCard extends React.Component<Content> {
   createSubtitle = (text: String) => text.split(" ").map(this.addWord);
   render() {
     return (
-      <div className="absolute mt-16 ml-16">
+      <div className="absolute mt-16 ml-32">
         <div className={styles.card}>
           <div className={styles.cardContent}>
             <p
               id="card-title"
-              className={`${styles.cardTitle} font-anek font-extrabold text-3xl`}
+              className={`${styles.cardTitle} font-anek font-extrabold text-8xl`}
             ></p>
             <p
               id="card-subtitle"

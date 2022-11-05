@@ -34,9 +34,9 @@ class SceneInit {
 
   threshold: number = 0.1;
   pointSize: number = 0.05;
-  width: number = 80;
-  length: number = 160;
-  rotateY = new THREE.Matrix4().makeRotationY(0.005);
+  width: number = 80 * 1.5;
+  length: number = 160 * 1.5;
+  rotateY = new THREE.Matrix4().makeRotationY(0.001);
 
   constructor(canvasId: string) {
     this.fov = 45;
@@ -67,6 +67,7 @@ class SceneInit {
         const u = i / width;
         const v = j / length;
         const x = u - 0.5;
+        //the height of the point
         const y = (Math.cos(u * Math.PI * 4) + Math.sin(v * Math.PI * 8)) / 20;
         const z = v - 0.5;
 
@@ -185,7 +186,7 @@ class SceneInit {
       10000
     );
 
-    this.camera.position.set(10, 10, 10);
+    this.camera.position.set(10, 3, 10);
     this.camera.lookAt(this.scene.position);
 
     this.camera.updateMatrix();
@@ -195,7 +196,7 @@ class SceneInit {
       this.width,
       this.length
     );
-    pcBuffer.scale.set(5, 10, 10);
+    pcBuffer.scale.set(10, 20, 20);
     pcBuffer.position.set(-5, 0, 0);
     this.scene.add(pcBuffer);
 
@@ -204,7 +205,7 @@ class SceneInit {
       this.width,
       this.length
     );
-    pcIndexed.scale.set(5, 10, 10);
+    pcIndexed.scale.set(10, 20, 20);
     pcIndexed.position.set(0, 0, 0);
     this.scene.add(pcIndexed);
 
@@ -213,7 +214,7 @@ class SceneInit {
       this.width,
       this.length
     );
-    pcIndexedOffset.scale.set(5, 10, 10);
+    pcIndexedOffset.scale.set(10, 20, 20);
     pcIndexedOffset.position.set(5, 0, 0);
     this.scene.add(pcIndexedOffset);
 
@@ -308,7 +309,7 @@ const Hero = () => {
   return (
     <div id="threejsroot" className="relative">
       <HoverCard
-        title="Alle Menschen sind frei und gleich an Würde und Rechten"
+        title="Cameron Dickie"
         subtitle="But in a much more real sense, I have no idea what I'm doing"
       />
       <canvas id="myThreeJsCanvas" />
