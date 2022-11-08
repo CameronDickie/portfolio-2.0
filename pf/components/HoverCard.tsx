@@ -49,7 +49,7 @@ class HoverCard extends React.Component<Content> {
           <div className={styles.cardContent}>
             <p
               id="card-title"
-              className={`${styles.cardTitle} font-anek font-extrabold text-8xl`}
+              className={`${styles.cardTitle} font-anek font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-8xl`}
             ></p>
             <p
               id="card-subtitle"
