@@ -5,11 +5,27 @@
 
 @font-face {
   font-family: "Rubik Mono One";
-  src: url('../public/RubikMonoOne-Regular.ttf');
+  src: url('../public/fonts/RubikMonoOne-Regular.ttf');
+}
+@font-face { 
+  font-family: "Atkinson Regular";
+  src: url("../public/fonts/AtkinsonHyperlegible-Regular.ttf");
+}
+@font-face { 
+  font-family: "Atkinson Bold";
+  src: url("../public/fonts/AtkinsonHyperlegible-Bold.ttf");
+}
+@font-face { 
+  font-family: "Atkinson Italic";
+  src: url("../public/fonts/AtkinsonHyperlegible-Italic.ttf");
+}
+@font-face { 
+  font-family: "Atkinson BoldItalic";
+  src: url("../public/fonts/AtkinsonHyperlegible-BoldItalic.ttf");
 }
 @font-face {
   font-family: "Anek Latin";
-  src: url('../public/AnekLatin-VariableFont_wdth\,wght.ttf');
+  src: url('../public/fonts/AnekLatin-VariableFont_wdth\,wght.ttf');
 }
 
 /* variable declaration */
