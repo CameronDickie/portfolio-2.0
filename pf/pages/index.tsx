@@ -1,10 +1,6 @@
 import Head from "next/head";
-import Header from "../components/Header";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import HoverCard from "../components/HoverCard";
 import Hero from "../components/Hero";
-import Grid from "../components/Grid";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
@@ -16,6 +12,8 @@ export default function Home() {
       </Head>
       {/* <Grid /> */}
       <Hero />
+      <Carousel />
+
       {/* <HoverCard
         title="Alle Menschen sind frei und gleich an Würde und Rechten"
         subtitle="But in a much more real sense, I have no idea what I'm doing"

@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="h-full flex justify-start">
         <div
           id="left"
-          className={`${styles.leftHero_start} bg-violet-500 w-2/3 h-full`}
+          className={`${styles.leftHero_start} bg-violet-800 w-2/3 h-full`}
         >
           <div
             className={`${styles.heroText} lg:ml-32 md:ml-16 ml-8 lg:w-auto md:w-48 w-32`}
