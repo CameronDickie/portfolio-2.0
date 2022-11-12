@@ -144,7 +144,7 @@ class SceneInit {
       const elapsedTime = this.clock?.getElapsedTime();
       if (this.plane) {
         this.plane.rotation.z = 0.15 * elapsedTime;
-        //no idea why typescript thinks this is an error but this is working...
+        //no idea why typescript linter thinks this is an error but this is working...
         this.plane.material.displacementScale =
           0.3 + (this.pointer.y / this.width) * 0.15;
       }
