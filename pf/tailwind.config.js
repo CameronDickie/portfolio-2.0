@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    minHeight: {
+      hero: "400px",
+    },
     extend: {
       fontFamily: {
         rubik: ["Rubik Mono One", "sans-serif"],

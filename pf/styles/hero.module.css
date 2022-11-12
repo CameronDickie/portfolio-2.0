@@ -20,12 +20,16 @@
     animation: return-left 250ms cubic-bezier(.5,0,.46,.99)
 } */
 
+.heroText {
+    position: relative;
+    top: 50%;
+}
 .heropfp {
     position: absolute;
     left: 33%;
     right: 0;
     margin: auto;
-    top: 50%;
+    top: 66%;
     transform: translate(0%,-50%);
     animation: slide-up 450ms ease-out, fade-in 450ms ease-out;
 }
