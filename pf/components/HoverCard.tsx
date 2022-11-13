@@ -1,7 +1,7 @@
 /*
     code taken and modified from https://www.youtube.com/watch?v=joDhIH6Xumw
 */
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/card.module.css";
 
 interface Content {
@@ -12,6 +12,15 @@ class HoverCard extends React.Component<Content> {
   title: Element | null | undefined;
   subtitle: Element | null | undefined;
   complete!: Boolean;
+
+  // componentWillReceiveProps(nextProps: Content) {
+  //   console.log("hello");
+  //   if (this.title) this.title.innerHTML = nextProps.title;
+  //   if (this.subtitle) {
+  //     this.subtitle.innerHTML = "";
+  //     this.createSubtitle(nextProps.subtitle);
+  //   }
+  // }
   componentDidMount() {
     if (!this.complete) {
       this.title = document.getElementById("card-title");
