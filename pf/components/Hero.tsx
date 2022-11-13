@@ -36,7 +36,9 @@ const Hero = () => {
           <div
             className={`${styles.heroText} lg:ml-32 md:ml-16 ml-8 lg:w-auto md:w-48 w-32`}
           >
-            <p className="text-lg text-white font-atkinson_regular">hi, i'm</p>
+            <p className="text-lg text-white font-atkinson_regular">
+              hi, i&apos;m
+            </p>
             <p className="lg:text-6xl md:text-4xl text-3xl text-rose-500 font-atkinson_bold">
               Cameron Dickie
             </p>

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HoverCard from "./HoverCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Carousel = () => {
+  const [curSiteIndex, setCurSiteIndex] = useState(0);
+  useEffect(() => {}, []);
   return (
     <div className="h-full grid grid-cols-3">
       <div className="h-full">
@@ -12,9 +16,21 @@ const Carousel = () => {
       </div>
 
       <div className="bg-gray-200 relative col-span-2 w-auto h-auto grid grid-cols-12">
-        <div>L</div>
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          className="m-auto p-2 transition ease-in-out delay-200 hover:bg-rose-200 hover:scale-125 motion-safe:hover:animate-pulse"
+          size="lg"
+          onClick={() => setCurSiteIndex(curSiteIndex - 1)}
+        />
         <div className="col-span-10 my-10 bg-rose-500"></div>
-        <div>R</div>
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          className="m-auto p-2 transition ease-in-out delay-200 hover:bg-rose-200 hover:scale-125 motion-safe:hover:animate-pulse "
+          size="lg"
+          onClick={() => {
+            setCurSiteIndex(curSiteIndex + 1);
+          }}
+        />
       </div>
     </div>
   );
