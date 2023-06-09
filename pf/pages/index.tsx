@@ -2,6 +2,7 @@ import Head from "next/head";
 import Hero from "../components/Hero";
 import Carousel from "../components/Carousel";
 import Summary from "../components/Summary";
+import Work from "../components/Work";
 // The following import prevents a Font Awesome icon server-side rendering bug,
 // where the icons flash from a very large icon down to a properly sized one:
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -18,8 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      {/* <Carousel /> */}
       <Summary />
+      <Work />
+
     </div>
   );
 }
