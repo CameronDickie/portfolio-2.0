@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 
 import ProjectCard from "./ProjectCard";
@@ -13,26 +13,56 @@ const Work = () => {
         // Add more projects as needed
     ];
 
+    const [slidesToShow, setSlidesToShow] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 640) {
+                setSlidesToShow(1);
+            } else if (screenWidth <= 768) {
+                setSlidesToShow(2);
+            } else {
+                setSlidesToShow(3);
+            }
+        };
+
+        // Initial setup
+        handleResize();
+
+        // Attach event listener for resize
+        window.addEventListener("resize", handleResize);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     const settings = {
         dots: true, // Show navigation dots
         infinite: false, // Enable infinite scrolling
         speed: 500, // Transition speed in milliseconds
-        slidesToShow: 3, // Number of slides to show at a time
+        slidesToShow: slidesToShow, // Number of slides to show at a time
         slidesToScroll: 1, // Number of slides to scroll at a time
         autoplay: false, // Enable autoplay
         autoplaySpeed: 2000, // Autoplay speed in milliseconds
+        arrows: false
     }
     return (
-        <div className="w-screen h-screen bg-gray-100">
-            <Slider {...settings}>
-                {projects.map((project, index) => (
-                    <ProjectCard
-                        key={index}
-                        title={project.title}
-                        description={project.description}
-                    />
-                ))}
-            </Slider>
+        <div className="w-screen max-h-full h-full bg-gray-100">
+            <div className="pb-6">
+                <Slider {...settings}>
+                    {projects.map((project, index) => (
+                        <ProjectCard
+                            key={index}
+                            title={project.title}
+                            description={project.description}
+                            numShowing={slidesToShow}
+                        />
+                    ))}
+                </Slider>
+            </div>
         </div>
     )
 }
