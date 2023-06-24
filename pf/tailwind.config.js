@@ -9,6 +9,10 @@ module.exports = {
       hero: "400px",
     },
     extend: {
+      colors: {
+        'cd_red': "#ff0000",
+        'cd_purple': "#200346",
+      },
       fontFamily: {
         rubik: ["Rubik Mono One", "sans-serif"],
         anek: ["Anek Latin", "sans-serif"],
