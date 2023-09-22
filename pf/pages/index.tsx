@@ -19,9 +19,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <Summary />
-      <Work />
-
+      {/* <Summary />
+      <Work /> */}
     </div>
   );
 }

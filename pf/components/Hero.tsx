@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../styles/hero.module.css";
-import pfp from "../public/pfp.png";
+import pfp from "../public/cam.webp";
 
 const Hero = () => {
   return (
-    <div className="w-screen h-3/5 min-h-hero relative">
+    <div className="w-screen h-full min-h-hero relative">
       <div className="h-full flex justify-start">
         <div
           id="left"
@@ -30,7 +30,11 @@ const Hero = () => {
           className={`${styles.rightHero_start} bg-cd_red w-1/3 h-full`}
         ></div>
       </div>
-      <img src={pfp.src} className={`${styles.heropfp} w-48 h-48`}></img>
+      <div
+        className={`${styles.viewport} w-48 h-48 relative overflow-hidden rounded-full`}
+      >
+        <img src={pfp.src} className={`${styles.heropfp}`}></img>
+      </div>
     </div>
   );
 };
